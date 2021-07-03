@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>C++中vector的使用</title>
+    <link href="/2021/07/03/C-%E4%B8%ADvector%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <url>/2021/07/03/C-%E4%B8%ADvector%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>vector是向量类型，可以容纳很多类型的数据，多以称其为容器，是STL的重要成员：使用时需要包含头文件：</p><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span>;</span><br></code></pre></td></tr></table></figure><h4 id="初始化一个矢量向量"><a href="#初始化一个矢量向量" class="headerlink" title="初始化一个矢量向量"></a>初始化一个矢量向量</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//以创建int 为例</span><br>vector&lt;<span class="hljs-keyword">int</span>&gt;a=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;;<br><br><span class="hljs-comment">//定义10个整型元素的向量，给每个元素的初始值为1</span><br>vector &lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-built_in">a</span>(<span class="hljs-number">10</span>，<span class="hljs-number">1</span>);<br><br><br></code></pre></td></tr></table></figure><h4 id="其他常用到的函数"><a href="#其他常用到的函数" class="headerlink" title="其他常用到的函数"></a>其他常用到的函数</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//向量中元素的个数</span><br>a=<span class="hljs-built_in">size</span>();<br><br><span class="hljs-comment">//迭代器输出</span><br><br>vector &lt;<span class="hljs-keyword">int</span>&gt;a = &#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span> &#125;;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = a.<span class="hljs-built_in">begin</span>(); it != a.<span class="hljs-built_in">end</span>(); it++)<br>&#123;<br>cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br><span class="hljs-comment">//返回第一个元素</span><br>a.<span class="hljs-built_in">front</span>();<br><span class="hljs-comment">//返回最后一个元素</span><br>a.<span class="hljs-built_in">back</span>();<br><br><br><span class="hljs-comment">//不使用auto关键字</span><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;a.<span class="hljs-built_in">size</span>();i++)<br>&#123;<br>cout&lt;&lt;a[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure><h4 id="关键字auto"><a href="#关键字auto" class="headerlink" title="关键字auto"></a>关键字auto</h4><ul><li>关键字auto在声明变量的时候根据变量的初始值的类型自动分配类型，自动类型的推断发生在编译期，不会造成程序运行时效率的降低。</li><li>可用于声明函数内部的变量类型</li><li>必须在定义时进行初始化，类似于const关键字</li><li>定义一个auto序列类型的变量必须始终在同一个类型</li><li>auto不是一个真正的类型，仅仅是一个占位符，不能使用一些操作函数：sizeof()等</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>C++基础知识</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Leecode 53.Maximum Subarry</title>
+    <link href="/2021/07/03/leecode53/"/>
+    <url>/2021/07/03/leecode53/</url>
+    
+    <content type="html"><![CDATA[<p><a href="http://">https://leetcode.com/problems/maximum-subarray/</a></p><h4 id="使用动态规划"><a href="#使用动态规划" class="headerlink" title="使用动态规划"></a>使用动态规划</h4><h4 id="添加了输出子序列"><a href="#添加了输出子序列" class="headerlink" title="添加了输出子序列"></a>添加了输出子序列</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/***使用动态规划，求数组中nums最大子序列的和；最终输出子序列***/</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">int</span> nums[] = &#123; <span class="hljs-number">-2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-5</span>, <span class="hljs-number">4</span> &#125;;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> n = <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(nums)/<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(n);<br><span class="hljs-keyword">int</span> nums_copy[n] = &#123;&#125;;<br><span class="hljs-built_in">memcpy</span>(nums_copy, nums,<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(nums));<br><span class="hljs-keyword">int</span> max_data = nums[<span class="hljs-number">0</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>&#123;<br><span class="hljs-keyword">if</span> (nums[i - <span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>)<br>&#123;<br>nums[i] += nums[i - <span class="hljs-number">1</span>];<br>&#125;<br>&#125;<br><span class="hljs-comment">//找到最大的和，与其值；</span><br><span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>&#123;<br><br><span class="hljs-keyword">if</span> (max_data &lt; nums[i])<br>&#123;<br>max_data = nums[i];<br>k = i;<br>&#125;<br>&#125;<br>cout &lt;&lt; endl;<br><span class="hljs-keyword">int</span> t = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = k;; i--)<br>&#123;<br><span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span>)<br>&#123;<br>t = i;<br><span class="hljs-keyword">break</span>;<br>&#125;<br>&#125;<br>cout &lt;&lt; max_data &lt;&lt; endl;<br><span class="hljs-comment">//输出最大和的子序列</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = t + <span class="hljs-number">1</span>; i &lt;= k; i++)<br>cout &lt;&lt; nums_copy[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>cout &lt;&lt; endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>leecode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>开课吧3天玩转数据分析</title>
     <link href="/2021/06/19/%E5%BC%80%E8%AF%BE%E5%90%A73%E5%A4%A9%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     <url>/2021/06/19/%E5%BC%80%E8%AF%BE%E5%90%A73%E5%A4%A9%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</url>
