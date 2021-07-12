@@ -18,7 +18,7 @@
   <meta name="author" content="LuozhiSun">
   <meta name="keywords" content="">
   
-  <title>C++中vector的使用 - 洛枳小屋</title>
+  <title>洛枳小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="C++中vector的使用">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      575 字
+      595 字
     </span>
   
 
@@ -225,20 +225,72 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">C++中vector的使用</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>摘抄—《剑指offer》<br>为了解决数组空间效率不高的问题，设计实现了多种动态数组，其中vector即为其中的一个。为了避免浪费，先为数组开辟较小的空间，然后往数组中添加数据，当数据的数目超过数组的容量时，再重新分配一块更大的空间（STL vector每次扩充时，新的容量都是前一次的两倍）</p>
+              <hr>
+<p>title: C++中vector的使用<br>date: 2021-07-03 11:45:25<br>categories: </p>
+<ul>
+<li>“C++基础知识”<br>tags:</li>
+<li>C++</li>
+</ul>
+<hr>
+<p>摘抄—《剑指offer》<br>为了解决数组空间效率不高的问题，设计实现了多种动态数组，其中vector即为其中的一个。为了避免浪费，先为数组开辟较小的空间，然后往数组中添加数据，当数据的数目超过数组的容量时，再重新分配一块更大的空间（STL vector每次扩充时，新的容量都是前一次的两倍）</p>
 <p>动态数组要尽量减少改变容量大小的次数。</p>
 <p>vector是向量类型，可以容纳很多类型的数据，多以称其为容器，是STL的重要成员：使用时需要包含头文件：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span>;</span><br></code></pre></td></tr></table></figure>
-<h4 id="初始化一个矢量向量"><a href="#初始化一个矢量向量" class="headerlink" title="初始化一个矢量向量"></a>初始化一个矢量向量</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//以创建int 为例</span><br>vector&lt;<span class="hljs-keyword">int</span>&gt;a=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;;<br><br><span class="hljs-comment">//定义10个整型元素的向量，给每个元素的初始值为1</span><br>vector &lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-built_in">a</span>(<span class="hljs-number">10</span>，<span class="hljs-number">1</span>);<br><br><br></code></pre></td></tr></table></figure>
-<h4 id="其他常用到的函数"><a href="#其他常用到的函数" class="headerlink" title="其他常用到的函数"></a>其他常用到的函数</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//向量中元素的个数</span><br>a=<span class="hljs-built_in">size</span>();<br><br><span class="hljs-comment">//迭代器输出</span><br><br>vector &lt;<span class="hljs-keyword">int</span>&gt;a = &#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span> &#125;;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = a.<span class="hljs-built_in">begin</span>(); it != a.<span class="hljs-built_in">end</span>(); it++)<br>&#123;<br>	cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br><span class="hljs-comment">//返回第一个元素</span><br>a.<span class="hljs-built_in">front</span>();<br><span class="hljs-comment">//返回最后一个元素</span><br>a.<span class="hljs-built_in">back</span>();<br><br><br><span class="hljs-comment">//不使用auto关键字</span><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;a.<span class="hljs-built_in">size</span>();i++)<br>&#123;<br>	cout&lt;&lt;a[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-<p>创建vector，向其中添加元素</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector &lt;<span class="hljs-keyword">int</span>&gt; a;<br>a.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">0</span>);<br></code></pre></td></tr></table></figure>
+<pre><code>#include&lt;vector&gt;;
+</code></pre>
+<h4 id="初始化一个矢量向量"><a href="#初始化一个矢量向量" class="headerlink" title="初始化一个矢量向量"></a>初始化一个矢量向量</h4><pre><code>//以创建int 为例
+vector&lt;int&gt;a=&#123;1,2,3,4&#125;;
 
+//定义10个整型元素的向量，给每个元素的初始值为1
+vector &lt;int&gt; a(10，1);
+
+</code></pre>
+<h4 id="其他常用到的函数"><a href="#其他常用到的函数" class="headerlink" title="其他常用到的函数"></a>其他常用到的函数</h4><pre><code>//向量中元素的个数
+a=size();
+
+//迭代器输出
+
+vector &lt;int&gt;a = &#123; 1,2,3,4 &#125;;
+for (auto it = a.begin(); it != a.end(); it++)
+&#123;
+    cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+&#125;
+//返回第一个元素
+a.front();
+//返回最后一个元素
+a.back();
+
+
+//不使用auto关键字
+for(int i=0;i&lt;a.size();i++)
+&#123;
+    cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+&#125;
+</code></pre>
+<p>创建vector，向其中添加元素</p>
+<pre><code>vector &lt;int&gt; a;
+a.push_back(0);
+</code></pre>
 <p>二维vector的长度</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">   vector&lt;vector&lt;<span class="hljs-built_in">int</span>&gt;&gt; A;<br>vector&lt;<span class="hljs-built_in">int</span>&gt; B;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>push<span class="hljs-constructor">_back(0)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>push<span class="hljs-constructor">_back(1)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>push<span class="hljs-constructor">_back(2)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">A</span>.</span></span>push<span class="hljs-constructor">_back(B)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>clear<span class="hljs-literal">()</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>push<span class="hljs-constructor">_back(3)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>push<span class="hljs-constructor">_back(4)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">B</span>.</span></span>push<span class="hljs-constructor">_back(5)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">A</span>.</span></span>push<span class="hljs-constructor">_back(B)</span>;<br><br><span class="hljs-comment">//输出A中含有的行数:2</span><br>cout &lt;&lt; <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">A</span>.</span></span>size<span class="hljs-literal">()</span> &lt;&lt; endl;<br><span class="hljs-comment">//输出每行中含有的数组:3</span><br>cout &lt;&lt; A<span class="hljs-literal">[<span class="hljs-number">0</span>]</span>.size<span class="hljs-literal">()</span> &lt;&lt; endl;<br></code></pre></td></tr></table></figure>
+<pre><code>    vector&lt;vector&lt;int&gt;&gt; A;
+    vector&lt;int&gt; B;
+    B.push_back(0);
+    B.push_back(1);
+    B.push_back(2);
+    A.push_back(B);
+    B.clear();
+    B.push_back(3);
+    B.push_back(4);
+    B.push_back(5);
+    A.push_back(B);
+
+    //输出A中含有的行数:2
+    cout &lt;&lt; A.size() &lt;&lt; endl;
+    //输出每行中含有的数组:3
+    cout &lt;&lt; A[0].size() &lt;&lt; endl;
+</code></pre>
 <h4 id="关键字auto"><a href="#关键字auto" class="headerlink" title="关键字auto"></a>关键字auto</h4><ul>
 <li>关键字auto在声明变量的时候根据变量的初始值的类型自动分配类型，自动类型的推断发生在编译期，不会造成程序运行时效率的降低。</li>
 <li>可用于声明函数内部的变量类型</li>
@@ -252,20 +304,6 @@
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/C-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">C++基础知识</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/C/">C++</a>
-                    
-                  </div>
                 
               </div>
               
