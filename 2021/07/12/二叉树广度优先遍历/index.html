@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      46 字
+      147 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -231,7 +231,7 @@
               <p><a target="_blank" rel="noopener" href="http://https//leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/">题目描述</a></p>
 <p>二叉树的从上至下打印（按层打印），二叉树的广度优先搜索（BFS）</p>
 <p>BFS通常借助队列的先入先出的特性实现</p>
-
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">/**<br> * Definition for a binary tree node.<br> * struct TreeNode &#123;<br> *     int val;<br> *     TreeNode *left;<br> *     TreeNode *right;<br> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;<br> * &#125;;<br> */<br>class Solution &#123;<br>public:<br>    vector<span class="hljs-tag">&lt;int&gt;</span> levelOrder(TreeNode* root) &#123;<br>        vector <span class="hljs-tag">&lt;int&gt;</span>ret;<br>        if(!root)<br>        &#123;<br>            return ret;<br>        &#125;<br>        queue<span class="hljs-tag">&lt;TreeNode*&gt;</span> q;<br>        q.push(root);<br>        while(q.size())<br>        &#123;<br>            TreeNode * <span class="hljs-keyword">node</span><span class="hljs-title">=q</span>.front();<br>            q.pop();<br>            ret.push_back(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;val</span>);<br>            if(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;left</span>)<br>            &#123;<br>                q.push(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;left</span>);<br>            &#125;<br>            if (<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;right</span>)<br>            &#123;<br>                q.push(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;right</span>);<br>            &#125;<br>        &#125;<br>        return ret;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>

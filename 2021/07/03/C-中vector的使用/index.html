@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      595 字
+      597 字
     </span>
   
 
@@ -229,74 +229,135 @@
             
             <div class="markdown-body">
               <hr>
-<p>title: C++中vector的使用<br>date: 2021-07-03 11:45:25<br>categories: </p>
+<p>title: C++中vector的使用</p>
+<p>date: 2021-07-03 11:45:25</p>
+<p>categories: </p>
 <ul>
-<li>“C++基础知识”<br>tags:</li>
+<li>“C++基础知识”</li>
+</ul>
+<p>tags:</p>
+<ul>
 <li>C++</li>
 </ul>
 <hr>
-<p>摘抄—《剑指offer》<br>为了解决数组空间效率不高的问题，设计实现了多种动态数组，其中vector即为其中的一个。为了避免浪费，先为数组开辟较小的空间，然后往数组中添加数据，当数据的数目超过数组的容量时，再重新分配一块更大的空间（STL vector每次扩充时，新的容量都是前一次的两倍）</p>
+<p>摘抄—《剑指offer》</p>
+<p>为了解决数组空间效率不高的问题，设计实现了多种动态数组，其中vector即为其中的一个。为了避免浪费，先为数组开辟较小的空间，然后往数组中添加数据，当数据的数目超过数组的容量时，再重新分配一块更大的空间（STL vector每次扩充时，新的容量都是前一次的两倍）</p>
 <p>动态数组要尽量减少改变容量大小的次数。</p>
 <p>vector是向量类型，可以容纳很多类型的数据，多以称其为容器，是STL的重要成员：使用时需要包含头文件：</p>
-<pre><code>#include&lt;vector&gt;;
+<pre><code>
+#include&lt;vector&gt;;
 </code></pre>
-<h4 id="初始化一个矢量向量"><a href="#初始化一个矢量向量" class="headerlink" title="初始化一个矢量向量"></a>初始化一个矢量向量</h4><pre><code>//以创建int 为例
+<h4 id="初始化一个矢量向量"><a href="#初始化一个矢量向量" class="headerlink" title="初始化一个矢量向量"></a>初始化一个矢量向量</h4><pre><code>
+//以创建int 为例
+
 vector&lt;int&gt;a=&#123;1,2,3,4&#125;;
 
+
+
 //定义10个整型元素的向量，给每个元素的初始值为1
+
 vector &lt;int&gt; a(10，1);
 
+
+
+
 </code></pre>
-<h4 id="其他常用到的函数"><a href="#其他常用到的函数" class="headerlink" title="其他常用到的函数"></a>其他常用到的函数</h4><pre><code>//向量中元素的个数
+<h4 id="其他常用到的函数"><a href="#其他常用到的函数" class="headerlink" title="其他常用到的函数"></a>其他常用到的函数</h4><pre><code>
+//向量中元素的个数
+
 a=size();
+
+
 
 //迭代器输出
 
+
+
 vector &lt;int&gt;a = &#123; 1,2,3,4 &#125;;
+
 for (auto it = a.begin(); it != a.end(); it++)
+
 &#123;
+
     cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+
 &#125;
+
 //返回第一个元素
+
 a.front();
+
 //返回最后一个元素
+
 a.back();
 
 
+
+
+
 //不使用auto关键字
+
 for(int i=0;i&lt;a.size();i++)
+
 &#123;
+
     cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+
 &#125;
+
+
 </code></pre>
 <p>创建vector，向其中添加元素</p>
-<pre><code>vector &lt;int&gt; a;
+<pre><code>
+vector &lt;int&gt; a;
+
 a.push_back(0);
 </code></pre>
 <p>二维vector的长度</p>
-<pre><code>    vector&lt;vector&lt;int&gt;&gt; A;
+<pre><code>
+    vector&lt;vector&lt;int&gt;&gt; A;
+
     vector&lt;int&gt; B;
+
     B.push_back(0);
+
     B.push_back(1);
+
     B.push_back(2);
-    A.push_back(B);
-    B.clear();
-    B.push_back(3);
-    B.push_back(4);
-    B.push_back(5);
+
     A.push_back(B);
 
+    B.clear();
+
+    B.push_back(3);
+
+    B.push_back(4);
+
+    B.push_back(5);
+
+    A.push_back(B);
+
+
+
     //输出A中含有的行数:2
+
     cout &lt;&lt; A.size() &lt;&lt; endl;
+
     //输出每行中含有的数组:3
+
     cout &lt;&lt; A[0].size() &lt;&lt; endl;
 </code></pre>
 <h4 id="关键字auto"><a href="#关键字auto" class="headerlink" title="关键字auto"></a>关键字auto</h4><ul>
-<li>关键字auto在声明变量的时候根据变量的初始值的类型自动分配类型，自动类型的推断发生在编译期，不会造成程序运行时效率的降低。</li>
-<li>可用于声明函数内部的变量类型</li>
-<li>必须在定义时进行初始化，类似于const关键字</li>
-<li>定义一个auto序列类型的变量必须始终在同一个类型</li>
-<li>auto不是一个真正的类型，仅仅是一个占位符，不能使用一些操作函数：sizeof()等</li>
+<li><p>关键字auto在声明变量的时候根据变量的初始值的类型自动分配类型，自动类型的推断发生在编译期，不会造成程序运行时效率的降低。</p>
+</li>
+<li><p>可用于声明函数内部的变量类型</p>
+</li>
+<li><p>必须在定义时进行初始化，类似于const关键字</p>
+</li>
+<li><p>定义一个auto序列类型的变量必须始终在同一个类型</p>
+</li>
+<li><p>auto不是一个真正的类型，仅仅是一个占位符，不能使用一些操作函数：sizeof()等</p>
+</li>
 </ul>
 
             </div>
