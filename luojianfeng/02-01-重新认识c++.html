@@ -18,9 +18,23 @@
   <meta name="author" content="LuozhiSun">
   <meta name="keywords" content="">
   
-  <title>洛枳小屋</title>
+  <title>02-重新认识C++----生命周期和编程范式 - 洛枳小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
 
 
 
@@ -48,7 +62,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,17 +161,13 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="很多人，咀嚼眼前的悲欢，忘了整个世界">
+            <span class="h2" id="subtitle" title="02-重新认识C++----生命周期和编程范式">
               
             </span>
 
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -168,209 +178,28 @@
     
       <div class="container nopadding-x-md">
         <div class="py-5" id="board"
-          style=margin-top:0>
+          >
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/07/03/leecode53/" target="_self">
-          
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/07/03/leecode53/" target="_self">
-          
-          
-            
-          
-          
-title: Leecode 53.Maximum Subarrydate: 2021-07-03 11:35:50categories: 
-
-“刷题”tags:
-C++
-算法
-leecode
+<article class="page-content">
+  <h2 id="01-重新认识c-生命周期和编程范式"><a href="#01-重新认识c-生命周期和编程范式" class="headerlink" title="01 重新认识c++:生命周期和编程范式"></a>01 重新认识c++:生命周期和编程范式</h2><h3 id="C-程序的生命周期"><a href="#C-程序的生命周期" class="headerlink" title="C++程序的生命周期"></a>C++程序的生命周期</h3><h4 id="1-编码"><a href="#1-编码" class="headerlink" title="1. 编码"></a>1. 编码</h4><p>代码规范、注释规范、设计模式、编程惯用法等</p>
+<h4 id="2-预处理"><a href="#2-预处理" class="headerlink" title="2. 预处理"></a>2. 预处理</h4><p>C++独有的阶段，其他编程语言没有。发挥作用的是  <strong>预处理器</strong> ，其输入是编码节点产生的源码文件，输出是经过 “预处理” 的与源码文件。目的是文字替换</p>
+<h4 id="3-编译"><a href="#3-编译" class="headerlink" title="3. 编译"></a>3. 编译</h4><p>“编译”和“链接”。生成可以在计算机上运行的二进制机器码，在编译过程中，还会检查C++与语法规则、语义，基本的“静态检查”。</p>
+<h4 id="4-运行"><a href="#4-运行" class="headerlink" title="4.运行"></a>4.运行</h4><p>编译阶段完成后，有了可执行文件，C++程序进入运行阶段。在运行阶段，进行GDB调试、日志追踪、性能分析等，收集动态的数据，调整设计思路，再返回编码阶段。实现“螺旋式上升”的开发。</p>
+<h3 id="C-语言的编程范式"><a href="#C-语言的编程范式" class="headerlink" title="C++语言的编程范式"></a>C++语言的编程范式</h3><p>编程范式（Paradigm）一种方法论，知道编写代码的一些思路、规则、习惯、定式和常用语等。</p>
+<p>C++是一种<strong>多范式</strong>语言，C++（11/14）支持“面向过程”、“面向对象”、“泛型”、“模板元”、“函数式” 五种主要的编程范式。</p>
+<p><img src="/01.jfif" srcset="/img/loading.gif" lazyload></p>
+<p>  <strong>面向过程</strong>是 C++中一个基本的编程范式，来源C语言，比如变量声明、表达式、分支/循环/跳出语句等等</p>
+<p>  <strong>面向对象</strong>是C++一个基本的编程范式，核心思想是 <strong>“抽象”</strong> 和 <strong>”封装“</strong>， 将任务分解撑一个高内聚低耦合的对象，这些对象互相通信协作完成任务，强调对象之间的关系和接口。面向对象的范式包括class 、public、private、virtual、this等类相关的关键，以及构造函数、析构函数、友元函数等概念。</p>
+<p>  <strong>泛型编程</strong>是自STL纳入到C++标准后才逐渐流行起来的新范式，核心思想是“一切皆为类型”，泛型的基础就是<strong>template</strong>关键字，然后是庞大的标准库，比如vector、map、sort等</p>
 
 
-https://leetcode.com/problems/maximum-subarray/
-使用动态规划添加了输出子序列/***使用动态规划，求数组中nums最大子序列的和；最终输出子序列***/
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-03 11:35" pubdate>
-              2021-07-03
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/06/19/%E5%BC%80%E8%AF%BE%E5%90%A73%E5%A4%A9%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_self">
-          开课吧3天玩转数据分析
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/06/19/%E5%BC%80%E8%AF%BE%E5%90%A73%E5%A4%A9%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_self">
-          
-          
-            
-          
-          python与数据分析基础工具如何利用数据驱动业务？？？数字化转型
-数据分析职业发展
-数据工程师-&gt;数据分析师-&gt;数据挖掘工程师-&gt;数据科学家
-python 语言基础操作1.1数据结构常见的python数据结构包括：元组、列表、字典、集合
-1.1.1元组元组是一个固定长度，不可改变的python 序列对象。创建元组最简单的方式，用逗号分隔一列值。
-123tup=4,5,6prin
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-19 23:21" pubdate>
-              2021-06-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/pyhton/">pyhton</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/pyhton%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">pyhton数据结构</a>
-            
-              <a href="/tags/numpy/">numpy</a>
-            
-              <a href="/tags/matplotlib/">matplotlib</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/06/17/%E5%BF%B5/" target="_self">
-          念
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/06/17/%E5%BF%B5/" target="_self">
-          
-          
-            
-          
-          淮南先生与洛枳小姐本来想写博客是想着记录研究生的学习之路，但最近似乎没有什么技术学习进展,就先写写我的淮南与洛枳的故事吧~
-最近淮南先生在出差，来找洛枳小姐的计划泡汤了。洛枳小姐企盼许久见面就这么推迟了，毕竟他们已经有两个月的时间没有见面了。她非常生气，也觉得对这段从一开始就异地，到现在为止2年3个月的感情坚持不下去了，于是给淮南先生写了很长很长的一段话。大致意思就是感觉自己不能很好的理解他，希望
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-17 23:57" pubdate>
-              2021-06-17
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%B7%AE%E5%8D%97%E6%B4%9B%E6%9E%B3/">淮南洛枳</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/06/17/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/06/17/hello-world/" target="_self">
-          
-          
-            
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-17 15:41" pubdate>
-              2021-06-17
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-
-
+  
+</article>
 
               </div>
             </div>
@@ -459,6 +288,8 @@ Quick
 
 
 
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
