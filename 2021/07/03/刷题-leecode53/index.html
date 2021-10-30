@@ -18,7 +18,7 @@
   <meta name="author" content="LuozhiSun">
   <meta name="keywords" content="">
   
-  <title>数组中只出现一次的两个数字 - 洛枳小屋</title>
+  <title>Leecode 53.Maximum Subarry - 洛枳小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数组中只出现一次的两个数字">
+            <span class="h2" id="subtitle" title="Leecode 53.Maximum Subarry">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-16 15:59" pubdate>
-        2021年7月16日 下午
+      <time datetime="2021-07-03 11:35" pubdate>
+        2021年7月3日 中午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      328 字
+      212 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      3
        分钟
     </span>
   
@@ -225,14 +225,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数组中只出现一次的两个数字</h1>
+            <h1 style="display: none">Leecode 53.Maximum Subarry</h1>
             
             <div class="markdown-body">
-              <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>数组中只出现一次的两个数字。一个整型数组中除两个数字外，其他数字都出现了两次，找出这两个只出现一次的数字，要求时间复杂度为O(n)，空间复杂度为O(1).</p>
-<p>异或运算的性质：任何一个数字异或自己均为0，</p>
-<p>针对数组中只出现一次的数组可以通过异或进行解决。</p>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>   从头到尾异或数组中的数字，最终得到的结果是两个只出现一次的数字的异或结果；其他数字出现了两次，异或后为0；<br>   由于这两个数字肯定不一样，那么异或的结果肯定不为0，其结果的二进制至少有一位1；<br>   在结果中找到第一位为1的位的位置，记为第n位，将数组中第n位是否为1的分为两个数组。这样就将问题分解为找到数组中只出现一次的数字。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs excel"><span class="hljs-built_in">int</span> ret = <span class="hljs-number">0</span>;<br>        for (<span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span> <span class="hljs-symbol">:</span> array)<br>            ret ^= <span class="hljs-built_in">n</span>;<br>        <span class="hljs-built_in">int</span> div = <span class="hljs-number">1</span>;<br>        while ((div &amp; ret) == <span class="hljs-number">0</span>)<br>            div &lt;&lt;= <span class="hljs-number">1</span>;<br>        <span class="hljs-built_in">int</span> a = <span class="hljs-number">0</span>, b = <span class="hljs-number">0</span>;<br>        for (<span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span> <span class="hljs-symbol">:</span> array)<br>            <span class="hljs-built_in">if</span> (div &amp; <span class="hljs-built_in">n</span>)<br>                a ^= <span class="hljs-built_in">n</span>;<br>            else<br>                b ^= <span class="hljs-built_in">n</span>;<br>        <span class="hljs-built_in">int</span> <span class="hljs-built_in">t</span>;<br>        <span class="hljs-built_in">if</span>(a&gt;b)<br>        &#123;<br>            <span class="hljs-built_in">t</span>=a;<br>            a=b;<br>            b=<span class="hljs-built_in">t</span>;<br>        &#125;<br>        return vector&lt;<span class="hljs-built_in">int</span>&gt;&#123;a, b&#125;;<br></code></pre></td></tr></table></figure>
+              <p><a href="http://">https://leetcode.com/problems/maximum-subarray/</a></p>
+<h4 id="使用动态规划"><a href="#使用动态规划" class="headerlink" title="使用动态规划"></a>使用动态规划</h4><h4 id="添加了输出子序列"><a href="#添加了输出子序列" class="headerlink" title="添加了输出子序列"></a>添加了输出子序列</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br><span class="hljs-comment">/***使用动态规划，求数组中nums最大子序列的和；最终输出子序列***/</span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"></span>&#123;<br><br>	<span class="hljs-keyword">int</span> nums[] = &#123; <span class="hljs-number">-2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-5</span>, <span class="hljs-number">4</span> &#125;;<br><br>	<br><br>	<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> n = <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(nums)/<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(n);<br><br>	<span class="hljs-keyword">int</span> nums_copy[n] = &#123;&#125;;<br><br>	<span class="hljs-built_in">memcpy</span>(nums_copy, nums,<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(nums));<br><br>	<span class="hljs-keyword">int</span> max_data = nums[<span class="hljs-number">0</span>];<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br><br>	&#123;<br><br>		<span class="hljs-keyword">if</span> (nums[i - <span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>)<br><br>		&#123;<br><br>			nums[i] += nums[i - <span class="hljs-number">1</span>];<br><br>		&#125;<br><br>	&#125;<br><br>	<span class="hljs-comment">//找到最大的和，与其值；</span><br><br>	<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br><br>	&#123;<br><br>		<br><br>		<span class="hljs-keyword">if</span> (max_data &lt; nums[i])<br><br>		&#123;<br><br>			max_data = nums[i];<br><br>			k = i;<br><br>		&#125;<br><br>	&#125;<br><br>	cout &lt;&lt; endl;<br><br>	<span class="hljs-keyword">int</span> t = <span class="hljs-number">0</span>;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = k;; i--)<br><br>	&#123;<br><br>		<span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span>)<br><br>		&#123;<br><br>			t = i;<br><br>			<span class="hljs-keyword">break</span>;<br><br>		&#125;<br><br>	&#125;<br><br>	cout &lt;&lt; max_data &lt;&lt; endl;<br><br>	<span class="hljs-comment">//输出最大和的子序列</span><br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = t + <span class="hljs-number">1</span>; i &lt;= k; i++)<br><br>		cout &lt;&lt; nums_copy[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br><br>	cout &lt;&lt; endl;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>&#125;<br><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -245,6 +242,13 @@
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
                 
               </div>
               
@@ -259,9 +263,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0-%E5%93%88%E5%B8%8C%E8%A1%A8/">
+                      <a href="/2021/07/03/%E5%88%B7%E9%A2%98-leecode135SingleNumber/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数组中数字出现次数--哈希表</span>
+                        <span class="hidden-mobile">leecode 135 Single Number</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -269,8 +273,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/16/tree/">
-                        <span class="hidden-mobile">tree</span>
+                      <a href="/2021/06/19/pyhton-%E5%BC%80%E8%AF%BE%E5%90%A73%E5%A4%A9%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="hidden-mobile">开课吧3天玩转数据分析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

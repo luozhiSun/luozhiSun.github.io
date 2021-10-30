@@ -18,7 +18,7 @@
   <meta name="author" content="LuozhiSun">
   <meta name="keywords" content="">
   
-  <title>开课吧3天玩转数据分析 - 洛枳小屋</title>
+  <title>剑指offer 32---  二叉树广度优先遍历 - 洛枳小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="开课吧3天玩转数据分析">
+            <span class="h2" id="subtitle" title="剑指offer 32---  二叉树广度优先遍历">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-19 23:21" pubdate>
-        2021年6月19日 晚上
+      <time datetime="2021-07-12 10:47" pubdate>
+        2021年7月12日 上午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      368 字
+      147 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      2
        分钟
     </span>
   
@@ -225,33 +225,13 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">开课吧3天玩转数据分析</h1>
+            <h1 style="display: none">剑指offer 32---  二叉树广度优先遍历</h1>
             
             <div class="markdown-body">
-              <h2 id="python与数据分析基础工具"><a href="#python与数据分析基础工具" class="headerlink" title="python与数据分析基础工具"></a>python与数据分析基础工具</h2><p>如何利用数据驱动业务？？？<br>数字化转型</p>
-<p>数据分析职业发展</p>
-<p>数据工程师-&gt;数据分析师-&gt;数据挖掘工程师-&gt;数据科学家</p>
-<h3 id="python-语言基础操作"><a href="#python-语言基础操作" class="headerlink" title="python 语言基础操作"></a>python 语言基础操作</h3><h3 id="1-1数据结构"><a href="#1-1数据结构" class="headerlink" title="1.1数据结构"></a>1.1数据结构</h3><p>常见的python数据结构包括：元组、列表、字典、集合</p>
-<h4 id="1-1-1元组"><a href="#1-1-1元组" class="headerlink" title="1.1.1元组"></a>1.1.1元组</h4><p>元组是一个固定长度，不可改变的python 序列对象。创建元组最简单的方式，用逗号分隔一列值。</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">tup</span>=4,5,6<br><span class="hljs-builtin-name">print</span>(tup)<br>(4,5,6)<br></code></pre></td></tr></table></figure>
-<p>嵌套复杂的元组：</p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs erlang">nested_tup=(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>),(<span class="hljs-number">7</span>,<span class="hljs-number">8</span>)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(nested_tup)</span></span><br><span class="hljs-function"><span class="hljs-params">((<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)</span>, <span class="hljs-params">(<span class="hljs-number">7</span>, <span class="hljs-number">8</span>)</span>)</span><br></code></pre></td></tr></table></figure>
-<p>可以使用tuple命令，将其他数据结构直接转化为元组</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">tuple</span><span class="hljs-params">([<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>])</span></span><br>(<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
-<p>将字符串转为元组</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lisp">tur=tuple(&#x27;string&#x27;)<br>print(<span class="hljs-name">tur</span>)<br>(&#x27;s&#x27;, &#x27;t&#x27;, &#x27;r&#x27;, &#x27;i&#x27;, &#x27;n&#x27;, &#x27;g&#x27;)<br></code></pre></td></tr></table></figure>
-<p>元组一旦创建，元组中的对象就不能修改了</p>
-<p>元组添加元素</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">tup=tuple(<span class="hljs-selector-attr">[<span class="hljs-string">&#x27;foo&#x27;</span>,[1,2]</span>,True])<br>tup<span class="hljs-selector-attr">[1]</span><span class="hljs-selector-class">.append</span>(<span class="hljs-number">3</span>)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(tup)</span></span><br>(<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-selector-attr">[1, 2, 3]</span>, True)<br></code></pre></td></tr></table></figure>
-<p>如果将元祖赋值给类似元组的变量，python会尝试拆分等号右边的值</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">tup=(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>)<br><span class="hljs-selector-tag">a</span>,<span class="hljs-selector-tag">b</span>,c=tup<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a)</span></span><br><span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-<p>tuple（元组）的应用场景主要有三个：、</p>
-<ol>
-<li>函数的参数和返回值，一个函数可以接收任意多个参数，一次返回多个数据</li>
-<li>格式字符串</li>
-<li>让列表不可以被修改，保护数据</li>
-</ol>
-<h4 id="1-1-2列表"><a href="#1-1-2列表" class="headerlink" title="1.1.2列表"></a>1.1.2列表</h4>
+              <p><a target="_blank" rel="noopener" href="http://https//leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/">题目描述</a></p>
+<p>二叉树的从上至下打印（按层打印），二叉树的广度优先搜索（BFS）</p>
+<p>BFS通常借助队列的先入先出的特性实现</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">/**<br> * Definition for a binary tree node.<br> * struct TreeNode &#123;<br> *     int val;<br> *     TreeNode *left;<br> *     TreeNode *right;<br> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;<br> * &#125;;<br> */<br>class Solution &#123;<br>public:<br>    vector<span class="hljs-tag">&lt;int&gt;</span> levelOrder(TreeNode* root) &#123;<br>        vector <span class="hljs-tag">&lt;int&gt;</span>ret;<br>        if(!root)<br>        &#123;<br>            return ret;<br>        &#125;<br>        queue<span class="hljs-tag">&lt;TreeNode*&gt;</span> q;<br>        q.push(root);<br>        while(q.size())<br>        &#123;<br>            TreeNode * <span class="hljs-keyword">node</span><span class="hljs-title">=q</span>.front();<br>            q.pop();<br>            ret.push_back(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;val</span>);<br>            if(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;left</span>)<br>            &#123;<br>                q.push(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;left</span>);<br>            &#125;<br>            if (<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;right</span>)<br>            &#123;<br>                q.push(<span class="hljs-keyword">node</span><span class="hljs-title">-&gt;right</span>);<br>            &#125;<br>        &#125;<br>        return ret;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -260,7 +240,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/pyhton/">pyhton</a>
+                      <a class="hover-with-bg" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a>
                     
                   </div>
                 
@@ -268,11 +248,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/pyhton%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">pyhton数据结构</a>
-                    
-                      <a class="hover-with-bg" href="/tags/numpy/">numpy</a>
-                    
-                      <a class="hover-with-bg" href="/tags/matplotlib/">matplotlib</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
                     
                   </div>
                 
@@ -289,9 +265,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/03/leecode53/">
+                      <a href="/2021/07/12/c++-STL%E9%98%9F%E5%88%97quene%E7%9A%84%E4%BD%BF%E7%94%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leecode 53.Maximum Subarry</span>
+                        <span class="hidden-mobile">C++----STL队列queue的使用</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -299,8 +275,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/06/17/%E5%BF%B5/">
-                        <span class="hidden-mobile">念</span>
+                      <a href="/2021/07/03/%E5%88%B7%E9%A2%98-leecode135SingleNumber/">
+                        <span class="hidden-mobile">leecode 135 Single Number</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

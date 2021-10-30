@@ -18,7 +18,7 @@
   <meta name="author" content="LuozhiSun">
   <meta name="keywords" content="">
   
-  <title>重新认识C++----生命周期和编程范式 - 洛枳小屋</title>
+  <title>C++----STL队列queue的使用 - 洛枳小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -34,6 +34,8 @@
     
   
 
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
 
 
@@ -62,7 +64,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -161,9 +163,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="重新认识C++----生命周期和编程范式">
+            <span class="h2" id="subtitle" title="C++----STL队列queue的使用">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-12 10:59" pubdate>
+        2021年7月12日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      120 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -176,36 +215,97 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<article class="page-content">
-  <h2 id="01-重新认识c-生命周期和编程范式"><a href="#01-重新认识c-生命周期和编程范式" class="headerlink" title="01 重新认识c++:生命周期和编程范式"></a>01 重新认识c++:生命周期和编程范式</h2><h3 id="C-程序的生命周期"><a href="#C-程序的生命周期" class="headerlink" title="C++程序的生命周期"></a>C++程序的生命周期</h3><h4 id="1-编码"><a href="#1-编码" class="headerlink" title="1. 编码"></a>1. 编码</h4><p>代码规范、注释规范、设计模式、编程惯用法等</p>
-<h4 id="2-预处理"><a href="#2-预处理" class="headerlink" title="2. 预处理"></a>2. 预处理</h4><p>C++独有的阶段，其他编程语言没有。发挥作用的是  <strong>预处理器</strong> ，其输入是编码节点产生的源码文件，输出是经过 “预处理” 的与源码文件。目的是文字替换</p>
-<h4 id="3-编译"><a href="#3-编译" class="headerlink" title="3. 编译"></a>3. 编译</h4><p>“编译”和“链接”。生成可以在计算机上运行的二进制机器码，在编译过程中，还会检查C++与语法规则、语义，基本的“静态检查”。</p>
-<h4 id="4-运行"><a href="#4-运行" class="headerlink" title="4.运行"></a>4.运行</h4><p>编译阶段完成后，有了可执行文件，C++程序进入运行阶段。在运行阶段，进行GDB调试、日志追踪、性能分析等，收集动态的数据，调整设计思路，再返回编码阶段。实现“螺旋式上升”的开发。</p>
-<h3 id="C-语言的编程范式"><a href="#C-语言的编程范式" class="headerlink" title="C++语言的编程范式"></a>C++语言的编程范式</h3><p>编程范式（Paradigm）一种方法论，知道编写代码的一些思路、规则、习惯、定式和常用语等。</p>
-<p>C++是一种<strong>多范式</strong>语言，C++（11/14）支持“面向过程”、“面向对象”、“泛型”、“模板元”、“函数式” 五种主要的编程范式。</p>
-<p><img src="/../img/01.jfif" srcset="/img/loading.gif" lazyload></p>
-<p>  <strong>面向过程</strong>是 C++中一个基本的编程范式，来源C语言，比如变量声明、表达式、分支/循环/跳出语句等等</p>
-<p>  <strong>面向对象</strong>是C++一个基本的编程范式，核心思想是 <strong>“抽象”</strong> 和 <strong>”封装“</strong>， 将任务分解撑一个高内聚低耦合的对象，这些对象互相通信协作完成任务，强调对象之间的关系和接口。面向对象的范式包括class 、public、private、virtual、this等类相关的关键，以及构造函数、析构函数、友元函数等概念。</p>
-<p>  <strong>泛型编程</strong>是自STL纳入到C++标准后才逐渐流行起来的新范式，核心思想是“一切皆为类型”，泛型的基础就是<strong>template</strong>关键字，然后是庞大的标准库，比如vector、map、sort等</p>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C++----STL队列queue的使用</h1>
+            
+            <div class="markdown-body">
+              <p>队列在头文件 <code>#include&lt;queue&gt;</code>中，是数据结构中的队列</p>
+<p>主要有一下几种用法</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;queue&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-comment">//定义一个空队列</span><br>    queue&lt;<span class="hljs-keyword">int</span>&gt; q;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">6</span>;i++)<br>    &#123;<br>    	<span class="hljs-comment">//将i值入队</span><br>    	q.<span class="hljs-built_in">push</span>(i);<br>    &#125;<br>    <span class="hljs-comment">//访问队首元素和队尾元素</span><br>    cout&lt;&lt;q.<span class="hljs-built_in">front</span>()&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;q.<span class="hljs-built_in">back</span>()&lt;&lt;endl;<br>    <span class="hljs-comment">//队列中的元素个数</span><br>    q.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-comment">//移除队首元素</span><br>    q.<span class="hljs-built_in">pop</span>();<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-  
-</article>
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/C-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">C++基础知识</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/12/c++-C-%E4%B8%ADvector%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++----vector使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/12/%E5%88%B7%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
+                        <span class="hidden-mobile">剑指offer 32---  二叉树广度优先遍历</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -285,7 +385,11 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
 

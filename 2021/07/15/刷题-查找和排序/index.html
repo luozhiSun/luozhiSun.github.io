@@ -18,7 +18,7 @@
   <meta name="author" content="LuozhiSun">
   <meta name="keywords" content="">
   
-  <title>leecode 135 Single Number - 洛枳小屋</title>
+  <title>查找和排序 - 洛枳小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="leecode 135 Single Number">
+            <span class="h2" id="subtitle" title="查找和排序">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-03 14:14" pubdate>
-        2021年7月3日 下午
+      <time datetime="2021-07-15 08:34" pubdate>
+        2021年7月15日 早上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      247 字
+      300 字
     </span>
   
 
@@ -225,16 +225,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">leecode 135 Single Number</h1>
+            <h1 style="display: none">查找和排序</h1>
             
             <div class="markdown-body">
-              <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><a href="http://">https://leetcode.com/problems/single-number/</a><br>找出数组中不相同的数组：给出一个非空整型数组，数组内的每个元素都出现了2次，只有1个数出现了一次，希望使用现行时间0（n）照吃只出现一次的数字。</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">input</span>:nums=[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br><span class="hljs-attribute">output</span>:<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>异或运算是指位与位之间遇到相同的则该位结果位0，不同的表示结果为1。数组nums中每个元素出现两次后，进行位运算后正好为0，最终位运算后的结果为单个的数据：single_data。</p>
-<p> C++中使用^运算表示二进制的异或运算</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">2</span>^<span class="hljs-number">4</span>=<span class="hljs-number">6</span><br><span class="hljs-attribute">010</span>^<span class="hljs-number">100</span>=<span class="hljs-number">110</span><br></code></pre></td></tr></table></figure>
-<p>异或^是一个重要的运算符，大量问题可以利用异或的特点找到解决方案。</p>
-<h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">singleNumber</span><span class="hljs-params">(vector&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> single_data=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> n=nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<br>        &#123;<br>            single_data=single_data^nums[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> single_data;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+              <p>查找和排序都是程序设计中经常用到的算法，查找相对而言比较简单：</p>
+<ul>
+<li>顺序查找</li>
+<li>二分查找</li>
+<li>哈希表查找</li>
+<li>二叉排序树查找</li>
+</ul>
+<p>剑指中11中“旋转数组的最小值”和53”在排序数组中查找数字“都可用二分查找算法解决。</p>
+<p>tips:如果要求在排序的数组（部分排序的数组）中查找一个数字或者统计某个数组出现的次数，都可尝试通过二分查找解决。</p>
+<p>哈希表和二叉排序树查找的重点在于考察对应的数据结构而非算法；</p>
+<p>哈希表最主要的优点是利用能够在o（1）的时间内查找某一元素，是效率最高的查找方式，但缺点是，需要额外的空间来实现哈希表。</p>
+<p>与二叉排序树对应的是二叉搜索树</p>
+<p>排序比查找复杂，应对各种排序手法熟悉，能够从额外空间消耗、平均时间复杂度、最差时间复杂度等方面比较优缺点。<br>快速排序的代码</p>
+<ul>
+<li>插入排序</li>
+<li>归并排序</li>
+<li>快速排序</li>
+</ul>
 
             </div>
             <hr>
@@ -252,11 +263,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/C/">C++</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-                    
-                      <a class="hover-with-bg" href="/tags/leecode/">leecode</a>
+                      <a class="hover-with-bg" href="/tags/%E6%9F%A5%E6%89%BE%E5%92%8C%E6%8E%92%E5%BA%8F/">查找和排序</a>
                     
                   </div>
                 
@@ -273,9 +280,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
+                      <a href="/2021/07/16/%E5%88%B7%E9%A2%98-tree/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">剑指offer 32---  二叉树广度优先遍历</span>
+                        <span class="hidden-mobile">tree</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -283,8 +290,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/03/leecode53/">
-                        <span class="hidden-mobile">Leecode 53.Maximum Subarry</span>
+                      <a href="/2021/07/12/c++-C-%E4%B8%ADvector%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                        <span class="hidden-mobile">C++----vector使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
